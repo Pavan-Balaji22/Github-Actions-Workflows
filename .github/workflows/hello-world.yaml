@@ -6,7 +6,6 @@ on:
   pull_request:
     branches:
       - master
-  pull_request_comment:
   workflow_dispatch:
 jobs:
   hello:
