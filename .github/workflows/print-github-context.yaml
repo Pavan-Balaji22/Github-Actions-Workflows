@@ -1,10 +1,10 @@
-name: learn-github-actions
-run-name: sample run from github
+name: Print-Github-Context
+run-name: print-github-context
 on:
   issue_comment:
     types: [created]
 jobs:
-  check-bats-version:
+  print-gh-context:
     if: ${{ github.event.issue.pull_request }}
     runs-on: ubuntu-latest
     steps:
