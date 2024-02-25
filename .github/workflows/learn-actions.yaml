@@ -2,10 +2,10 @@ name: learn-github-actions
 run-name: sample run from github
 on:
   issue_comment:
-    types: created
+    types: [created]
 jobs:
   check-bats-version:
-    if: ${{github.event.issue.pull_request}}
+    if: ${{ github.event.issue.pull_request }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
