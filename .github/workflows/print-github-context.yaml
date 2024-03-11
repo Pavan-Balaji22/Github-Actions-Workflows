@@ -9,7 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Save output
-        run: echo ${{github.event.comment}} > out.text
+        run: echo ${{github.event.comment}} > out.txt
+      - name: Print Output
+        run: cat out.txt
       - name: print to comment
         uses: peter-evans/create-or-update-comment@v4
         with:
