@@ -8,4 +8,10 @@ jobs:
     if: ${{ github.event.comment.body == 'run'}}
     runs-on: ubuntu-latest
     steps:
-      - run: echo " ${{ toJson(github.event)}}"
+      - name: Save output
+        run: echo ${{github.event.comment}} > out.text
+      - name: print to comment
+        uses: peter-evans/create-or-update-comment@v4
+        with:
+          issue-number: ${{github.event.issue.number}}
+          body-path: ./out.text
