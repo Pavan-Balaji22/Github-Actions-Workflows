@@ -1,9 +1,6 @@
 name: Hello World Workflow
 run-name: Hello world is running!!!!
 on:
-  push:
-    branches:
-      - master
   pull_request:
     branches:
       - master
