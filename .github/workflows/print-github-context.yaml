@@ -11,12 +11,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Save output
-        run: ${{toJson(github.event.comment)}} > out.txt
+        run: echo ${{toJson(github.event.comment)}}
       - name: Print Output
         run: cat out.txt
       - name: print to comment
         uses: peter-evans/create-or-update-comment@v4
         with:
           issue-number: ${{github.event.issue.number}}
-          body: |
-            ${{toJson(github.event.comment)}}
+          body: ${{toJson(github.event.comment)}}
