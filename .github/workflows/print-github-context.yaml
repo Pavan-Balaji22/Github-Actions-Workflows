@@ -1,5 +1,10 @@
 name: Print-Github-Context
 run-name: print-github-context
+permissions:
+  actions: write
+  pull-requests: write
+  id-token: write
+  issues: write
 on:
   issue_comment:
     types: [created]
