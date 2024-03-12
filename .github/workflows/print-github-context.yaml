@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Save output
-        run: echo ${{github.event.comment}} > out.txt
+        run: echo ${{toJson(github.event.comment)}} > out.txt
       - name: Print Output
         run: cat out.txt
       - name: print to comment
@@ -19,4 +19,4 @@ jobs:
         with:
           issue-number: ${{github.event.issue.number}}
           body: |
-            ${{github.event.comment}}
+            ${{toJson(github.event.comment)}}
