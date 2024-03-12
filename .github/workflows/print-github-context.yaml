@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Save output
-        run: echo ${{toJson(github.event.comment)}}
+        run: echo "${{toJson(github.event.comment)}}""
       - name: Print Output
         run: cat out.txt
       - name: print to comment
