@@ -1,10 +1,7 @@
 name: Print-Github-Context
 run-name: print-github-context
 permissions:
-  actions: write
   pull-requests: write
-  id-token: write
-  issues: write
 on:
   issue_comment:
     types: [created]
@@ -21,5 +18,4 @@ jobs:
         uses: peter-evans/create-or-update-comment@v4
         with:
           issue-number: ${{github.event.issue.number}}
-          body: |
-            "Hello everyone"
+          body-path: ./out.txt
