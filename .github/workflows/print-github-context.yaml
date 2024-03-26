@@ -20,6 +20,5 @@ jobs:
           issue-number: ${{github.event.issue.number}}
           body-path: "out.txt"
   Using-reusable-workflow:
-    permissions: 
-      actions: read
+    permissions: write-all
     uses: ./.github/workflows/test.yaml

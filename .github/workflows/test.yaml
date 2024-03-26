@@ -4,8 +4,7 @@ on:
 
 jobs:
   test-job-1:
-    permissions: 
-      actions: read
+    permissions: write-all
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
