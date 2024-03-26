@@ -1,6 +1,6 @@
 name: test-workflow
 on: 
-  pull_request_comment: 
+  issue_comment:   
     types: [created,edited]
 
 jobs:
