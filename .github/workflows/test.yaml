@@ -1,7 +1,6 @@
 name: test-workflow
 on: 
-  issue_comment:   
-    types: [created,edited]
+  workflow_call: 
 
 jobs:
   test-job-1:
@@ -9,6 +8,4 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
-      - run: |
-          npm init -y
-          npm install aws-cdk-lib
+      - run: echo "Hello from workflow call"

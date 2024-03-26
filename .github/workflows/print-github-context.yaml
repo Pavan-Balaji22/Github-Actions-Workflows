@@ -19,3 +19,5 @@ jobs:
         with:
           issue-number: ${{github.event.issue.number}}
           body-path: "out.txt"
+      - name: Using reuseable workflow
+        uses: ./.github/test.yaml
