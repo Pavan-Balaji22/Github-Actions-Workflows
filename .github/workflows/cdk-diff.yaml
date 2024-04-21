@@ -1,4 +1,4 @@
-name: test-workflow
+name: CDK diff workflow
 on: 
   workflow_call: 
 
@@ -8,4 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: echo "Hello from workflow call"
+      - run: |
+          npm install aws-cdk-lib
+          npm install aws-sdk

@@ -1,12 +1,12 @@
 name: Print-Github-Context
 run-name: print-github-context
-permissions:
-  pull-requests: write
 on:
   issue_comment:
     types: [created]
 jobs:
   print-gh-context:
+    permissions:
+      pull-requests: write
     if: ${{ github.event.comment.body == 'run'}}
     runs-on: ubuntu-latest
     steps:
@@ -19,6 +19,6 @@ jobs:
         with:
           issue-number: ${{github.event.issue.number}}
           body-path: "out.txt"
-  Using-reusable-workflow:
+  calling-cdk-diff:
     permissions: write-all
-    uses: ./.github/workflows/test.yaml
+    uses: ./.github/workflows/cdk-diff.yaml
