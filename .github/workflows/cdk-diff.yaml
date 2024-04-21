@@ -7,8 +7,10 @@ jobs:
     permissions: write-all
     runs-on: ubuntu-latest
     steps:
-      - name: Install Packages
       - uses: actions/checkout@v4
-      - run: |
+      - name: Install Packages
+        run: |
           npm install aws-cdk-lib
           npm install aws-sdk
+      - name: cdk diff
+        run: cdk diff
