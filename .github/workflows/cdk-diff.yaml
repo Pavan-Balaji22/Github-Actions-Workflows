@@ -13,4 +13,4 @@ jobs:
           npm install -global aws-cdk-lib
           npm install -global aws-sdk
       - name: cdk diff
-        run: cdk diff
+        run: $PATH
