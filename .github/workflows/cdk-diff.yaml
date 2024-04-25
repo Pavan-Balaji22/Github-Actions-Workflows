@@ -10,7 +10,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Install Packages
         run: |
-          where npm
+          which npm
           npm install aws-cdk-lib
           npm install aws-sdk
       - name: cdk diff
