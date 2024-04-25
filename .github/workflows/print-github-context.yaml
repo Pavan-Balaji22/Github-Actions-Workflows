@@ -22,3 +22,8 @@ jobs:
   calling-cdk-diff:
     permissions: write-all
     uses: ./.github/workflows/cdk-diff.yaml
+
+  calling-cdk-deploy:
+    permissions: write-all
+    uses: ./.github/workflows/cdk-deploy.yaml
+    needs: calling-cdk-diff 

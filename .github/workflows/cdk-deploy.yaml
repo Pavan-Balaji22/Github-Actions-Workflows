@@ -1,4 +1,4 @@
-name: CDK diff workflow
+name: CDK deploy workflow
 on: 
   workflow_call: 
 
@@ -14,4 +14,4 @@ jobs:
           npm install aws-cdk-lib
           npm install aws-sdk
       - name: cdk diff
-        run: cdk diff
+        run: cdk deploy
