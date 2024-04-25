@@ -17,4 +17,4 @@ jobs:
           npm install aws-sdk
           ls
       - name: cdk diff
-        run: which cdk
+        run: npx cdk diff
