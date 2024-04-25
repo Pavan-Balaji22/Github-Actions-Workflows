@@ -13,5 +13,5 @@ jobs:
           npm init -y
           npm install aws-cdk-lib
           npm install aws-sdk
-      - name: cdk diff
-        run: cdk diff
+      #- name: cdk diff
+       # run: cdk diff
