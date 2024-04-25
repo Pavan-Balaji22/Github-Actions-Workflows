@@ -12,7 +12,7 @@ jobs:
         run: |
           pwd
           ls
-          npm init
+          npm init -y
           npm install aws-cdk-lib
           npm install aws-sdk
           ls
