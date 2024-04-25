@@ -12,7 +12,9 @@ jobs:
         run: |
           pwd
           ls
-          npm install -global aws-cdk-lib
-          npm install -global aws-sdk
+          npm init
+          npm install aws-cdk-lib
+          npm install aws-sdk
+          ls
       - name: cdk diff
         run: which cdk
