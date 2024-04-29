@@ -11,6 +11,9 @@ jobs:
       - name: Verify aws cli
         run: |
           aws --version
+          ls
+      - name: Print github Context
+        run: echo ${{github}}
       - name: Install Packages
         run: |
           npm init -y
