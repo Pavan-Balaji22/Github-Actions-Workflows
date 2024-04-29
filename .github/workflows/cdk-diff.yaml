@@ -13,7 +13,7 @@ jobs:
           aws --version
           ls
       - name: Print github Context
-        run: echo ${{toJson(github)}}
+        run: echo "${{toJson(github)}}"
       - name: Install Packages
         run: |
           npm init -y
