@@ -14,7 +14,7 @@ jobs:
           ls
       - name: Print github Context
         run: |
-          ${{toJson(github)}} > out.txt
+          echo "${{toJson(github)}}" > out.txt
           cat out.txt
       - name: Install Packages
         run: |
