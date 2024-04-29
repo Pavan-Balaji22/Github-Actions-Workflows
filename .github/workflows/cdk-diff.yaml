@@ -8,9 +8,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: verify aws cli
+      - name: Verify aws cli
         run: |
           aws --version
+          ls
+      - name: Print github Context
+        run: echo ${{github}}
       - name: Install Packages
         run: |
           npm init -y
