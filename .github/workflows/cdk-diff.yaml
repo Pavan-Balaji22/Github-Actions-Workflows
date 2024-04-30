@@ -17,9 +17,9 @@ jobs:
           echo "AWS_ACCESS_KEY_ID=${{secrets.AWS_ACCESS_KEY_ID}}" >> "$GITHUB_ENV"
           echo "AWS_SECRET_ACCESS_KEY=${{secrets.AWS_SECRET_ACCESS_KEY}}" >> "$GITHUB_ENV"
           echo "AWS_DEFAULT_REGION=ca-central-1" >> "$GITHUB_ENV"
-          printenv
       - name: Print s3 buckets
         run: |
+          printenv
           aws s3 ls
       - name: Print github Context
         run: |
