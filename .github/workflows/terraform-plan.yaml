@@ -1,6 +1,10 @@
 name: Terraform Plan workflow
 on: 
   workflow_call:
+    inputs:
+      dir:
+        type: string
+        description: directory to do tterraform plan
     secrets:
       assume_role:
         description: aws role to use in assuming permissions
@@ -26,7 +30,7 @@ jobs:
         run: terraform version
       - name: Prepare terraform plan
         run: |
-          cd variablesValidation
+          cd ${{inputs.dir}}
           terraform init
           terraform plan -out myplan
           terraform show myplan
