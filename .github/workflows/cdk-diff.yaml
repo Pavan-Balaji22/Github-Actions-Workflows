@@ -1,6 +1,10 @@
 name: CDK diff workflow
 on: 
   workflow_call:
+    secrets:
+      assume_role:
+        description: aws role to use in assuming permissions
+        required: true
 
 permissions:
   id-token: write # This is required for requesting the JWT
@@ -20,7 +24,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-region: ca-central-1
-          role-to-assume: arn:aws:iam::392159187067:role/test-assume-role
+          role-to-assume: ${{secrets.assume_role}}
           role-session-name: "githubsession"
       - name: Print s3 buckets
         run: |
