@@ -13,13 +13,11 @@ jobs:
           aws --version
           ls
       - name: Configure credentials
-        env:
-          AWS_ACCESS_KEY_ID: ${{secrets.AWS_ACCESS_KEY_ID}}
-          AWS_SECRET_ACCESS_KEY: ${{secrets.AWS_SECRET_ACCESS_KEY}}
         uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-region: "ca-central-1"
-          role-to-assume: "arn:aws:iam::392159187067:role/test-assume-role"
+          aws-access-key-id: ${{secrets.AWS_ACCESS_KEY_ID}}
+          aws-secret-access-key: ${{secrets.AWS_SECRET_ACCESS_KEY}}
       - name: Print s3 buckets
         run: |
           aws s3 ls
