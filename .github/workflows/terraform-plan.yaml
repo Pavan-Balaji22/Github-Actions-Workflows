@@ -1,0 +1,32 @@
+name: Terraform Plan workflow
+on: 
+  workflow_call:
+    secrets:
+      assume_role:
+        description: aws role to use in assuming permissions
+        required: true
+
+permissions: write-all
+
+
+jobs:
+  test-job-1:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configure credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-region: ca-central-1
+          role-to-assume: ${{secrets.assume_role}}
+          role-session-name: "githubsession"
+      - name: Setup terraform
+        uses: hashicorp/setup-terraform@v3
+      - name: Verify terraform installation
+        run: terraform version
+      - name: Prepare terraform plan
+        run: |
+          cd variablesValidation
+          terraform init
+          terraform plan -out myplan
+          terraform show myplan
