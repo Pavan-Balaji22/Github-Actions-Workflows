@@ -19,7 +19,7 @@ jobs:
           aws-region: "ca-central-1"
           aws-secret-access-key: ${{secrets.AWS_SECRET_ACCESS_KEY}}
           role-to-assume: "arn:aws:iam::392159187067:role/test-assume-role"
-          role-session-name: "Github Session"
+          role-session-name: "githubsession"
       - name: Print s3 buckets
         run: |
           aws s3 ls
