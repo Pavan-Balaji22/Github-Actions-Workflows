@@ -12,13 +12,14 @@ jobs:
         run: |
           aws --version
           ls
+      - name: Configure credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{secrets.AWS_ACCESS_KEY_ID}}
+          aws-region: "ca-central-1"
+          aws-secret-access-key: ${{secrets.AWS_SECRET_ACCESS_KEY}}
       - name: Print s3 buckets
-        env:
-          AWS_ACCESS_KEY_ID: ${{secrets.AWS_ACCESS_KEY_ID}}
-          AWS_SECRET_ACCESS_KEY: ${{secrets.AWS_SECRET_ACCESS_KEY}}
         run: |
-          printenv
-          export AWS_DEFAULT_REGION="ca-central-1"
           aws s3 ls
       - name: Print github Context
         run: |
