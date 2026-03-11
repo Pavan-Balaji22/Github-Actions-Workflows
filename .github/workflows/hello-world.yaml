@@ -17,6 +17,7 @@ jobs:
           client-id: 5fa0706c-1826-4b68-88d2-2bd1570a749a
           # TenantId of the Azure Service principal created.
           tenant-id: f27c729b-d027-4e71-a043-769e65ff463d
+          allow-no-subscription: true
           
   hello:
     runs-on: ubuntu-latest
