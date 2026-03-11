@@ -5,7 +5,19 @@ on:
     branches:
       - master
   workflow_dispatch:
+permissions: write-all
 jobs:
+  login:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Azure Login
+        uses: Azure/login@v2.3.0
+        with:
+          # Paste output of `az ad sp create-for-rbac` as value of secret variable: AZURE_CREDENTIALS
+          client-id: 5fa0706c-1826-4b68-88d2-2bd1570a749a
+          # TenantId of the Azure Service principal created.
+          tenant-id: f27c729b-d027-4e71-a043-769e65ff463d
+          
   hello:
     runs-on: ubuntu-latest
     steps:
